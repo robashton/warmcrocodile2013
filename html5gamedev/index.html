@@ -296,7 +296,7 @@ gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
         </div>
       
         <div class="step slide" data-x="8000" data-y="4500">
-          <h1>Matrices</h1>   
+          <h2>Matrices</h2>   
           <ul>
             <li>Sorry... it's maths</li>
             <li>Used for transformations</li>
@@ -344,7 +344,7 @@ mat4.perspective(45, 4/3, 1, 100, projection);
         </div>         
         
         <div class="step slide" data-x="12000" data-y="4500">
-          <h1>Quick maths lesson</h1>
+          <h2>Quick maths lesson</h2>
           <p>Given a position 'P' on a model, as a vector (x,y,z)</p>
           <ul>
             <li>Multiply by world matrix to get its position in the game world</li>
@@ -354,7 +354,7 @@ mat4.perspective(45, 4/3, 1, 100, projection);
         </div>
         
         <div class="step slide" data-x="13000" data-y="4500">
-          <h1>Shaders</h1>
+          <h2>Shaders</h2>
           <ul>
             <li>Two types of shader, <strong>vertex</strong> and <strong>fragment</strong></li>
             <li>Programs that operate on data that has been sent to the GPU</li>
@@ -502,8 +502,8 @@ gl.enableVertexAttribArray(aVertexPosition);
           <h1>Making it go 'beep'</h1>
         </div>
 
-        <div class="step code" data-x="1000" data-y="6000">
-          <h1>HTML5 Audio</h1>
+        <div id="audio" class="step code" data-x="1000" data-y="6000">
+          <h2>HTML5 Audio</h2>
           <pre>
               var audio = new Audio();
               audio.url = 'myfile.wav';
@@ -549,7 +549,7 @@ gl.enableVertexAttribArray(aVertexPosition);
         </div>
 
         <div class="step code" data-x="3000" data-y="6000">
-          <h1>HTML5 Audio - Updated</h1>
+          <h2>HTML5 Audio - Updated</h2>
           <pre>
               var audio = new Audio();
               if(!!a.canPlayType('audio/mpeg;').replace(/no/, ''))
@@ -563,14 +563,14 @@ gl.enableVertexAttribArray(aVertexPosition);
           </pre>
         </div>
 
-        <div class="step" data-x="4000" data-y="6000">
+        <div class="step slide" data-x="4000" data-y="6000">
           <h1>HTML5 Audio</h1>
           <p>We have a working example, except...</p>
           <p>It still won't work on iOS</p>
         </div>
 
         <div class="step code" data-x="5000" data-y="6000">
-          <h1>HTML5 Audio - Updated</h1>
+          <h2>HTML5 Audio - Updated</h2>
           <pre>
               var audio = new Audio();
               if(!!a.canPlayType('audio/mpeg;').replace(/no/, ''))
@@ -589,8 +589,8 @@ gl.enableVertexAttribArray(aVertexPosition);
         </div>
 
         <div class="step code" data-x="6000" data-y="6000">
-          <h1>Pre-loading on iOS</h1>
-          <pre>
+          <h2>Pre-loading on iOS</h2>
+          <pre class="small">
               function handleAudioLoading(audio, cb) {
 
                 var force = function () {
@@ -618,14 +618,19 @@ gl.enableVertexAttribArray(aVertexPosition);
               }
           </pre>
         </div>
-
-        <div class="step slide" data-x="8000" data-y="6000
         
-        <div class="step slide" data-x="3000" data-y="6000">
+        <div class="step slide" data-x="7000" data-y="6000">
           <h2>Audio Support</h2>
           <ul>
             <li>Kinda sucks really</li>
-            <li>Consider "Buzz" or similar: <strong>github.com/jaysalvat/buzz</strong></li>
+            <li>Either spend a few days reading angry blog posts</li>
+            <li>Or use a library</li>
+            <ul>
+              <li>SoundManager2</li>
+              <li>primo-audio</li>
+              <li>Buzz</li>
+              <li>Flash (...cough)</li>
+            </ul>
           </ul>          
         </div>
 
