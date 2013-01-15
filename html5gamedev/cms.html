@@ -6,15 +6,10 @@
   	  	var target = document.getElementById('target');
   	  	var context = target.getContext('2d');
 
-        var x = 0;
-        var y = 0;
-
         setInterval(function() {
           context.clearRect(0, 0, target.width, target.height);
           context.fillStyle = '#000';
-          context.fillRect(x, y, 100, 100);
-          x+= 2.0;
-          y += 2.0;
+          context.fillRect(0, 0, 100, 100);
         });
 
 
