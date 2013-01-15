@@ -13,3 +13,4 @@ Loadsa modules
   - Should:       I like writing 'should' sometimes 
   - Nodemon:      Keeping the feedback cycle fast forevs
   - Jake:         A formalised build process
+  - Browserify:   NPM, but in the browser
