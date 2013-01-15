@@ -11,7 +11,7 @@
 
         gl.clearColor(0.0, 0.0, 0.0, 1.0);
         
-        var PARTICLECOUNT = 500000;
+        var PARTICLECOUNT = 500;
         var vertices = new Float32Array(PARTICLECOUNT * 2);
         var velocities = new Float32Array(PARTICLECOUNT * 2);
         var colours = new Float32Array(PARTICLECOUNT * 3);
@@ -20,9 +20,9 @@
           vertices[x * 2 + 1] = Math.random() * canvas.height;
           velocities[x * 2] = Math.random() * 0.05 - 0.025;
           velocities[x * 2 + 1] = Math.random() * 0.05 - 0.025;
-          colours[x * 3] = 1.0; //Math.random() * 1.0;
-          colours[x * 3 + 1] = 1.0; // Math.random() * 1.0;
-          colours[x * 3 + 2] = 1.0; //0.0; //Math.random() * 1.0;
+          colours[x * 3] = Math.random() * 1.0;
+          colours[x * 3 + 1] = Math.random() * 1.0;
+          colours[x * 3 + 2] = Math.random() * 1.0;
           colours[x * 3 + 3] = Math.random() * 0.25;
         }
          
