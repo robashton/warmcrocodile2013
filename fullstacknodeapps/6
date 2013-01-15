@@ -1,0 +1,15 @@
+Loadsa modules
+==============
+
+  - Connect:      req/res/next
+  - Express:      A default happy place
+  - Passport:     auth support for nearly all the things
+  - Jade:         My preferred view engine this week
+  - Stylus:       The CSS sugar that works best on node at the moment
+  - Zombie:       Headless browser for the testing
+  - Mocha:        My preferred test runner this year
+  - Mocha-Cakes:  Sugar, I know
+  - Coffeescript: I'm not going to argue about it
+  - Should:       I like writing 'should' sometimes 
+  - Nodemon:      Keeping the feedback cycle fast forevs
+  - Jake:         A formalised build process

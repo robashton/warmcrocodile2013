@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <style>
+      #target {
+        position: absolute;
+      }
+      #target div {
+        position: relative;
+      }
+    </style>
+  	<script type="text/javascript" src="jquery.js"></script>
+  	<script type="text/javascript">
+  	  $(document).ready(function() {
+  	  	var target = document.getElementById('target');
+
+        var sprite = document.createElement('div');
+        sprite.style.width = 100 + 'px';
+        sprite.style.height = 100 + 'px';
+        sprite.style.top = 10 + 'px';
+        sprite.style.left = 10 + 'px';
+        sprite.style['background-color'] = '#000';
+        target.appendChild(sprite);
+
+        var x = 10;
+        var y = 10;
+        setInterval(function(){ 
+          sprite.style.top = y + 'px';
+          sprite.style.left = x + 'px';
+
+          x += 1;
+          y += 1;
+        }, 1000 / 30);
+
+  	  });
+  	</script>
+  </head>
+  <body>
+  	<div id="target" width="640" height="480">
+
+    </div>
+  </body>
+</html>

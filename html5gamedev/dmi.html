@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <style>
+      #target {
+        position: absolute;
+      }
+      #target div {
+        position: relative;
+      }
+    </style>
+  	<script type="text/javascript" src="jquery.js"></script>
+  	<script type="text/javascript">
+  	  $(document).ready(function() {
+  	  	var target = document.getElementById('target');
+
+        var sprite = document.createElement('div');
+        sprite.style.width = 100 + 'px';
+        sprite.style.height = 100 + 'px';
+        sprite.style.top = 10 + 'px';
+        sprite.style.left = 10 + 'px';
+        sprite.style['background-color'] = '#000';
+        target.appendChild(sprite);
+
+        var img = document.createElement('img');
+        img.src = 'me.jpg';
+        sprite.appendChild(img);
+
+  	  });
+  	</script>
+  </head>
+  <body>
+  	<div id="target" width="640" height="480">
+
+    </div>
+  </body>
+</html>

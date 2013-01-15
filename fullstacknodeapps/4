@@ -1,0 +1,13 @@
+Demo - Deconstructing Hello World
+=================================
+
+- Every request made can be handled by a function with req/res
+- We could apply multiple functions over those req/res objects
+- By adding a 'next' parameter, we can chain those functions
+- Well done, we've now invented 'connect'
+
+  function handler(req, res, next) {
+
+  }
+
+npm install 'connect'

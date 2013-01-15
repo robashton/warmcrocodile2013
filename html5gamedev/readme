@@ -1,0 +1,134 @@
+Repo for my devsum talk on web-based gamings
+
+Ideas
+------
+
+First off, a quick history of web-based games
+-------
+	- Warner Bros (HTML with Frames lol)
+	- City of whatever (the persistent web-based thing) + ilk
+	- Runescape (Java)
+	- Braid (NaCL)
+	- Angry Birds (WebGL)
+	- Everything Zynga has done (mostly HTML/CSS/Sprites)
+
+Some reasons we might want to hit up the web tech
+--------
+  - Easy way to get to market
+  - Can support all the devices with minimal re-work
+  - It's fun and direct
+  - Can make money with no middle men!!!!
+
+Anyway, what are our options?
+--------
+  - WebGL
+  - Canvas
+  - HTML + CSS3
+  - NaCL
+  - Unity Web Player
+  - Flash
+
+  We're going to cover the first three, we're not interested in black box in browser solutions today
+
+Tech
+-------
+Canvas
+
+    - Drawing simple shapes
+    - Drawimg images
+    - Demo on
+       - Laptop
+       - iPad
+       - Mobile phone
+    - Run this on web server on private wifi network so everybody can participate
+
+- Pros
+    - Runs nearly everywhere
+    - Very simple to use, very direct
+    - Excellent for building things quickly
+
+- Cons
+    - Poor hardware acceleration support
+    - Slow draw calls
+    - Lots of learning to do for performant canvas
+    - Struggles at high resolutions
+
+- Examples
+    - A scene in a platform game
+      - pre-render the background vs doing it every frame
+      - Show frame rates
+    - A scene with high quality images at 1024x768
+      - Render at 640x480 and scale up
+
+HTML5 + CSS
+    - CSS Sprites/Transforms
+    - Same demo as in the first one
+        - Laptop
+        - iPad
+        - Mobile phone
+    - Run this so everybody can participate
+
+- Pros
+    - Runs pretty much everywhere
+    - Performance is generally amazing
+    - Not a lot to learn to use this
+
+- Cons
+    - Can be a bit tricky to coax into desired behaviour
+    - Not as flexible as 'just drawing stuff' 
+    - It's not what it was designed to do, you WILL encounter oddities!
+
+WebGL
+    - What is it? (Khronos, participants etc)
+    - The 15 simple steps to draw a triangle on the screen
+
+- Pros
+    - Hardware acceleration by very definition
+    - Potentially superb graphics
+    - Low CPU use (leaving CPU for game logic)
+
+- Cons
+    - Steep learning curve (low level)
+    - Not supported universally
+      - No iOS yet :-(
+      - No IE :-(
+
+- Examples in each platform
+  - A simple black square
+  - A simple square with an image
+  - Bouncing the square around
+  - Particles
+  - 3D (spin the square)
+
+- Examples
+    - Hoverbattles
+    - Maybe show off 'hackspace'
+
+- Ah yes, networking
+  - Let's build a canvas multiplay demo together
+  - Create a node server, bring in socket.io
+  - Create a scene, ability to add new entities, and remove them
+  - New connections mean adding a square, your square is blue
+  - Moving your square around with arrow keys results in everybody elses screens updating
+
+Note that in this demo, there was no shared code - so why NodeJS?
+  - No reason at all, other than it's cool and I like the lack of context switching
+
+Multi player?
+  - Do you want to share code?
+     - No, not always
+       - Server is your secret sauce
+       - Server generally controls the game
+       - Clients are just views of the current state
+     - Yes
+       - The above is true, but the client predicting state can lead to a better experience
+       - Sharing code? Well... JavaScript?
+       - NodeJS!
+
+ 
+Choosing your tech
+-------
+
+What kind of game do you want to build?
+What platforms do you want to deploy to first?
+Platforms will define your feature limitations, and features will limit your platform choices.

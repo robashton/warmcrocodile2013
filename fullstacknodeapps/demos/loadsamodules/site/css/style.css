@@ -1,0 +1,25 @@
+.shoutout {
+  height: 80px;
+  margin: 10px;
+  background-color: #eee;
+}
+.shoutout .avatar {
+  margin: 5px;
+  height: 40px;
+  width: 40px;
+  float: left;
+  background-color: #fff;
+}
+.shoutout p {
+  float: left;
+  width: 70%;
+}
+.shoutout p .name {
+  margin: 5px;
+  display: block;
+  font-weight: bold;
+}
+.shoutout p .content {
+  display: block;
+  margin: 5px;
+}

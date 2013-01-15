@@ -1,0 +1,8 @@
+Express
+=======
+
+  - A pile of bundled 'connect' modules
+  - A tidy way of building up a 'connect' workflow
+  - An implementation detail only - can easily change
+
+  - npm install express

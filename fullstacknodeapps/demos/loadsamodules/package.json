@@ -1,0 +1,12 @@
+{
+  "name": "shoutout",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "",
+    "jade": "",
+    "should": "~1.2.0",
+    "mocha-cakes": "~0.9.0",
+    "zombie": "~2.0.0-alpha6",
+    "stylus": ""
+  }
+}
