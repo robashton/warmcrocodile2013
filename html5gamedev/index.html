@@ -499,15 +499,15 @@ gl.enableVertexAttribArray(aVertexPosition);
         </div>
 
         <div class="step slide" data-x="0" data-y="6000">
-          <h1>A note on audio</h1>
+          <h1>Making it go 'beep'</h1>
         </div>
 
         <div class="step code" data-x="1000" data-y="6000">
-          <h1>Audio use</h1>
+          <h1>HTML5 Audio</h1>
           <pre>
-var audio = new Audio();
-audio.url = 'myfile.wav';
-audio.play();
+              var audio = new Audio();
+              audio.url = 'myfile.wav';
+              audio.play();
           </pre>
         </div>
 
@@ -523,7 +523,8 @@ audio.play();
                 <tr><td>IE</td>         <td></td><td></td><td>X</td><td>X</td></tr>
                 <tr><td>Opera</td>      <td>X</td><td>X</td><td></td><td></td></tr>
                 <tr><td>Firefox</td>    <td>X</td><td>X</td><td></td><td></td></tr>
-                <tr><td>Chrome</td>     <td>X</td><td>X</td><td>X</td><td>X</td></tr>
+                <tr><td>chrome</td>     <td>x</td><td>x</td><td>x</td><td>x</td></tr>
+                <tr><td>Safari</td>     <td></td><td>x</td><td>x</td><td>x</td></tr>
             </tbody>
           </table>
         </div>
@@ -541,10 +542,85 @@ audio.play();
                 <tr><td>Opera</td>      <td>X</td><td></td><td></td><td></td></tr>
                 <tr><td>Firefox</td>    <td>X</td><td></td><td></td><td></td></tr>
                 <tr><td>Chrome</td>     <td>X</td><td></td><td>X</td><td></td></tr>
+                <tr><td>Safari</td>     <td></td><td>x</td><td>x</td><td></td></tr>
+            </tbody>
             </tbody>
           </table>
         </div>
 
+        <div class="step code" data-x="3000" data-y="6000">
+          <h1>HTML5 Audio - Updated</h1>
+          <pre>
+              var audio = new Audio();
+              if(!!a.canPlayType('audio/mpeg;').replace(/no/, ''))
+                audio.url = 'myfile.mp3';
+              else if(!!a.canPlayType('audio/ogg; codecs="vorbis"').replace(/no/, ''))
+                audio.url = 'myfile.ogg';
+              else
+                audio.url = 'myfile.wav';
+               
+              audio.play();
+          </pre>
+        </div>
+
+        <div class="step" data-x="4000" data-y="6000">
+          <h1>HTML5 Audio</h1>
+          <p>We have a working example, except...</p>
+          <p>It still won't work on iOS</p>
+        </div>
+
+        <div class="step code" data-x="5000" data-y="6000">
+          <h1>HTML5 Audio - Updated</h1>
+          <pre>
+              var audio = new Audio();
+              if(!!a.canPlayType('audio/mpeg;').replace(/no/, ''))
+                audio.url = 'myfile.mp3';
+              else if(!!a.canPlayType('audio/ogg; codecs="vorbis"').replace(/no/, ''))
+                audio.url = 'myfile.ogg';
+              else
+                audio.url = 'myfile.wav';
+
+              preloadAudio(audio, function() {
+                audio.play()
+              })
+               
+              audio.play();
+          </pre>
+        </div>
+
+        <div class="step code" data-x="6000" data-y="6000">
+          <h1>Pre-loading on iOS</h1>
+          <pre>
+              function handleAudioLoading(audio, cb) {
+
+                var force = function () {
+                  audio.pause();
+                  audio.removeEventListener('play', force, false);
+                  if(cb) { cb(); cb = null; }
+                };
+
+                var progress = function () {
+                  audio.removeEventListener('play', force, false);
+                  audio.removeEventListener('progress', progress, false);
+                  if(cb) { cb(); cb = null; }
+                };
+
+                audio.addEventListener('play', force, false);
+                audio.addEventListener('progress', progress, false);
+
+                var click = document.ontouchstart === undefined ? 'click' : 'touchstart';
+                var kickoff = function () {
+                  audio.play();
+                  document.documentElement.removeEventListener(click, kickoff, true);
+                };
+
+                document.documentElement.addEventListener(click, kickoff, true);
+              }
+          </pre>
+        </div>
+
+        <div class="step slide" data-x="8000" data-y="6000
+        
         <div class="step slide" data-x="3000" data-y="6000">
           <h2>Audio Support</h2>
           <ul>
@@ -560,8 +636,7 @@ audio.play();
         <div class="step slide" data-x="1000" data-y="7500">
           <h1 class="top">Use Canvas when...</h1>
           <ul>
-            <li>You're building for fast machines</li>
-            <li>You can cache the results easily</li>
+            <li>You're building simple games</li>
             <li>You're working with a small surface area</li>
           </ul>
         </div>
@@ -580,7 +655,7 @@ audio.play();
           <ul>
             <li>You don't care about IE</li>
             <li>You don't care about iPad</li>
-            <li>You want to show off</li>
+            <li>You want to show off your ponies</li>
           </ul>
         </div>
 
@@ -589,11 +664,20 @@ audio.play();
           <ul>
             <li>You want the best performance</li>
             <li>You don't like Javascript</li>
-            <li>You don't like hard work</li>
+            <li>You want to make money</li>
           </ul>
         </div>
 
         <div class="step slide" data-x="5000" data-y="7500">
+          <h1>Engines are available</h1>
+          <ul>
+            <li>ImpactJS (Canvas)</li>
+            <li>Mozilla</li>
+            <li>PrimoJS</li>
+          </ul>
+        </div>
+
+        <div class="step slide" data-x="6000" data-y="7500">
           <h1 class="top">So what have we learned?</h1>
           <ul>
             <li>We have a lot of choices</li>
