@@ -1,0 +1,6 @@
+{
+  "name": "html5gamedev-demo",
+  "dependencies": {
+    "paperboy": ""
+  }
+}
